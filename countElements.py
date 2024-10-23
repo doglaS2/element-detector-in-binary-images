@@ -4,7 +4,7 @@ from skimage import measure
 import matplotlib.pyplot as plt
 
 # carregar a img
-image_color = cv2.imread('image/meteor_challenge_01.png')
+image_color = cv2.imread('your-image')
 
 # verificar se a img foi carregada corretamente
 if image_color is None:
