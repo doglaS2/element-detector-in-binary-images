@@ -1,12 +1,18 @@
+import os
 import cv2
 import numpy as np
 from skimage import measure
 import matplotlib.pyplot as plt
 
-# carregar a img
-image_color = cv2.imread('your-image')
+# definir o caminho para o arquivo de imagem na pasta data
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+data_dir = os.path.join(BASE_DIR, '..', 'data')
+image_path = os.path.join(data_dir, 'imagem_meteoro.png')
 
-# verificar se a img foi carregada corretamente
+# carregar a imagem
+image_color = cv2.imread(image_path)
+
+# verificar se a imagem foi carregada corretamente
 if image_color is None:
     print("Erro ao carregar a imagem.")
 else:
@@ -25,7 +31,7 @@ else:
 
     print(f'número de estrelas encontradas: {star_count}')
 
-    # exibir ambas imagens
+    # exibir ambas as imagens
     plt.figure(figsize=(10, 5))
     plt.subplot(1, 2, 1)
     plt.title('Imagem Original')
